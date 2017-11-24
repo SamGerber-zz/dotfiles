@@ -1,0 +1,63 @@
+[alias]
+	a = add
+	aa = add --update
+	alias = config --get-regexp ^alias\\.
+	amend = commit --verbose --amend
+	ap = add --patch
+	b = branch
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	c = checkout
+	check = diff --staged
+	cw = diff --staged --color-words
+	ci = commit --verbose
+	ca = commit --verbose --all
+	cleanup = !git branch | grep -v -e master -e staging -e production | xargs git branch -d
+	co = checkout
+	d = diff
+	ds = diff --stat    # mnemonic: "diff stat"
+	f = fetch --prune
+	fix = commit --amend
+	hard = reset --hard
+	k = cherry-pick
+	l = log --pretty=oneline --abbrev-commit
+	# l = log --pretty=format:\"%C(green)%h%C(reset) %C(blue)%ad%C(reset) %s%C(yellow)%d%C(reset) %C(blue)[%an]%C(reset)\" --graph --date=short
+	last = log -n 1 --pretty=\"%H\"
+	n = commit --verbose --amend
+	p = pair
+	pci = pair-commit --verbose
+	peek = log -p --max-count=1
+	pm = pull          # mnemonic: pull merge
+	pop = reset --soft HEAD^
+	publish = "!git push -u origin $(git branch-name)"
+	pr = pull --rebase # mnemonic: pull rebase
+	r = remote
+	re = rebase --interactive
+	s = commit --dry-run --short
+	scrap = checkout HEAD
+	soft = reset --soft
+	stage = add
+	t = diff --cached
+	unstage = reset HEAD
+[branch]
+	autosetuprebase = always
+[core]
+	#editor = atom --wait
+	excludesfile = /Users/sam/.gitignore_global
+	editor = vim
+[credential]
+  helper = cache --timeout 0
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[push]
+	default = upstream
+[rebase]
+	autosquash = true
+[rerere]
+	enabled = 1
+[user]
+	email = gerbyxvi@gmail.com
+	name = SamGerber
+[merge]
+	conflictstyle = diff3

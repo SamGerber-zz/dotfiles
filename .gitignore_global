@@ -1,0 +1,54 @@
+# Git Pair Config File #
+########################
+.pairs
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Atom Build #
+##############
+.atom-build.*
+
+# ctags #
+#########
+.tags*
+
+# Custom Rubocop Configs #
+##########################
+.sams.rubocop.yml
+
+# Sass-Lint Config #
+####################
+.sass-lint.yml
+
+# build elm #
+#############
+.atom-build.yml
+
+# temp files #
+##############
+.DS_Store
+
+# emacs temp files #
+####################
+.#*
+
+# ctags #
+#########
+.tags*
+
+# local gemfiles #
+##################
+Gemfile.local
+Gemfile.local.lock
+
+#local pry config
+.pryrc
+

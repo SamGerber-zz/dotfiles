@@ -1,0 +1,16 @@
+alias ..="cd .."
+alias a="atom"
+alias be="bundle exec"
+alias bi="bundle install"
+alias l="ls"
+alias ls="ls -G"
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
+
+alias prettyjson='python -m json.tool'
+
+alias clean_branches="git fetch; git branch --merged master | grep -v \* | grep -v '^ *master *$' | xargs -n 1 git branch -d"
+
+# Load local aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
